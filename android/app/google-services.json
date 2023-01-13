@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "400710104504",
+    "project_id": "ventry-a4bf1",
+    "storage_bucket": "ventry-a4bf1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:400710104504:android:0a33a05bcdba9dc7024b4d",
+        "android_client_info": {
+          "package_name": "com.noah.ventry"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "400710104504-2ka53fefv0itvdd2vr8mkamis0j76cec.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbZksIkScnhNO6x1D3Wm7SUCIT_FHO4j0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "400710104504-2ka53fefv0itvdd2vr8mkamis0j76cec.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "400710104504-gtupalua7fejl68tsljfvqjkrvhvfadq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.noah.ventry"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
