@@ -1,4 +1,4 @@
 # ventry
 
-A new Flutter project.
+A shop inventory management system mobile application
 
