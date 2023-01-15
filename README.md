@@ -1,6 +1,6 @@
 <h1 align="center" style="border-bottom: none">
     <div>
-        <a href="https://github.com/noahweasley/Ventry-Flutter">
+        <a href="https://github.com/noahweasley/Ventry">
             <img src="assets/ventry_icon_2.png" width="80" />
         </a>
     </div>
