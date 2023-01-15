@@ -6,7 +6,6 @@
     </div>
     <br>
     Ventry
-    <br>
 </h1>
 
 <p align="center">
