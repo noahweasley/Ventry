@@ -1,10 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-class SwitchPageEvent extends Equatable {
-  final int numOfPages;
-
-  const SwitchPageEvent({required this.numOfPages});
-
+class HomeEvent extends Equatable {
   @override
-  List<Object?> get props => [numOfPages];
+  List<Object?> get props => [];
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ventry/blocs/home_screen_bloc/bloc.dart';
+import 'package:ventry/blocs/intro_screen_bloc/bloc.dart';
 import 'package:ventry/blocs/theme_bloc/theme_bloc.dart';
 import 'package:ventry/widgets/intro_screen.dart';
 
@@ -35,7 +35,12 @@ class _IntroPageState extends State<IntroPage> {
                 statusBarColor: themeBloc.isDarkThemeEnabled ?? false ? const Color(0xFFec5387) : Colors.pinkAccent,
               ),
               title: Center(
-                child: Text(widget.title),
+                child: Text(
+                  widget.title,
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                        color: Colors.white,
+                      ),
+                ),
               ),
             ),
             body: BlocProvider(

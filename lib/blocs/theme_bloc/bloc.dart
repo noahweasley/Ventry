@@ -29,7 +29,7 @@ class ThemeBloc extends HydratedBloc<ThemeEvent, ThemeData> {
   @override
   Map<String, bool>? toJson(ThemeData state) {
     try {
-      return {'light': state != ThemeState.lightTheme};
+      return {'light': state == ThemeState.lightTheme};
     } catch (_) {
       return null;
     }
