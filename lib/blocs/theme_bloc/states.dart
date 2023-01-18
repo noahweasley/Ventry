@@ -4,7 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ThemeState extends Equatable {
   static final baseTheme = ThemeData(
-    appBarTheme: const AppBarTheme(toolbarHeight: 52.0),
+    appBarTheme: const AppBarTheme(
+      toolbarHeight: 52.0,
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(
@@ -55,7 +57,7 @@ class ThemeState extends Equatable {
     ),
   );
 
-  static final darkTheme = baseTheme.copyWith(
+  static final darkTheme = ThemeData.dark().copyWith(
     textTheme: latoTextTheme.copyWith(
       bodySmall: defaultTextStyleDark,
       bodyMedium: defaultTextStyleDark,
@@ -73,11 +75,7 @@ class ThemeState extends Equatable {
       displayMedium: defaultTextStyleDark,
       displayLarge: defaultTextStyleDark,
     ),
-    primaryColor: const Color(0xFFec5387),
     scaffoldBackgroundColor: const Color(0xFF1A1A1A),
-    colorScheme: const ColorScheme.light().copyWith(
-      primary: const Color(0xFFec5387),
-    ),
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         foregroundColor: Colors.white,

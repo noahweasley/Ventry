@@ -77,7 +77,6 @@ class IntroScreenState extends State<IntroScreen> {
                   padding: const EdgeInsets.all(16.0),
                   child: BlocBuilder<IntroScreenBloc, int>(
                     builder: ((context, state) {
-                      debugPrint('Bloc state: $state');
                       //  _pageController.animateToPage(
                       //    state,
                       //    duration: const Duration(seconds: 1),
