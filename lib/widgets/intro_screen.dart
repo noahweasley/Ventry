@@ -23,7 +23,7 @@ class IntroScreenState extends State<IntroScreen> {
     _pageController = PageController();
   }
 
-  @override
+  @override   
   void dispose() {
     super.dispose();
     _pageController.dispose();

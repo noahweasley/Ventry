@@ -32,7 +32,7 @@ class _IntroPageState extends State<IntroPage> {
           home: Scaffold(
             appBar: AppBar(
               systemOverlayStyle: SystemUiOverlayStyle(
-                statusBarColor: themeBloc.isDarkThemeEnabled ?? false ? const Color(0xFFec5387) : Colors.pinkAccent,
+                statusBarColor: themeBloc.isDarkThemeEnabled ?? false ? const Color(0xFFec5387) : null,
               ),
               title: Center(
                 child: Text(
