@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ventry/blocs/intro_screen_bloc/intro_screen_bloc.dart';
 import 'package:ventry/blocs/theme_bloc/theme_bloc.dart';
 import 'package:ventry/localization/strings.dart';
+import 'package:ventry/widgets/intro/intro_page_children.dart';
 
 class IntroScreen extends StatefulWidget {
   final ThemeBloc themeBloc;
@@ -16,6 +17,7 @@ class IntroScreen extends StatefulWidget {
 class IntroScreenState extends State<IntroScreen> {
   // widget.themeBloc.isDarkThemeEnabled ?? false
   late final PageController _pageController;
+  final pageChildren = IntroScreenPageUtils.getIntroPageChildren();
 
   @override
   void initState() {
@@ -23,26 +25,11 @@ class IntroScreenState extends State<IntroScreen> {
     _pageController = PageController();
   }
 
-  @override   
+  @override
   void dispose() {
     super.dispose();
     _pageController.dispose();
   }
-
-  final List<Widget> _introPageWidgetList = const <Widget>[
-    Center(
-      child: PageWidget(text: 'Page 1'),
-    ),
-    Center(
-      child: PageWidget(text: 'Page 2'),
-    ),
-    Center(
-      child: PageWidget(text: 'Page 3'),
-    ),
-    Center(
-      child: PageWidget(text: 'Page 4'),
-    )
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +40,7 @@ class IntroScreenState extends State<IntroScreen> {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            const Spacer(),
             Row(
               children: [
                 TextButton(
@@ -67,7 +55,7 @@ class IntroScreenState extends State<IntroScreen> {
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 onPageChanged: (value) => _onPageChanged(pagePosition: value, bloc: bloc),
-                children: _introPageWidgetList,
+                children: pageChildren,
               ),
             ),
             Row(
@@ -84,9 +72,9 @@ class IntroScreenState extends State<IntroScreen> {
                       //  );
                       return ElevatedButton(
                         onPressed: () {
-                          bloc.add(ButtonSwitchPageEvent(numOfPages: _introPageWidgetList.length));
+                          bloc.add(ButtonSwitchPageEvent(numOfPages: pageChildren.length));
                         },
-                        child: Text(state < _introPageWidgetList.length ? Strings.next : Strings.finish),
+                        child: Text(state < pageChildren.length ? Strings.next : Strings.finish),
                       );
                     }),
                   ),
@@ -106,36 +94,5 @@ class IntroScreenState extends State<IntroScreen> {
     //      currentIndex: pagePosition ?? 0,
     //    ),
     //  );
-  }
-}
-
-class PageWidget extends StatelessWidget {
-  final String text;
-
-  const PageWidget({super.key, required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const FlutterLogo(
-            size: 300.0,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Row(
-              children: [
-                Text(
-                  text,
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
   }
 }
