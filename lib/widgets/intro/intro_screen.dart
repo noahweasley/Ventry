@@ -40,7 +40,6 @@ class IntroScreenState extends State<IntroScreen> {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Spacer(),
             Row(
               children: [
                 TextButton(

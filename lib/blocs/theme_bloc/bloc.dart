@@ -3,15 +3,15 @@ import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:ventry/blocs/theme_bloc/theme_bloc.dart';
 
 class ThemeBloc extends HydratedBloc<ThemeEvent, ThemeData> {
-   bool? isDarkThemeEnabled;
-   
+  bool? isDarkThemeEnabled;
+
   ThemeBloc() : super(ThemeState.darkTheme) {
     on<ThemeEvent>((event, emit) {
       if (event is LightThemeEvent) {
-         isDarkThemeEnabled = false;
+        isDarkThemeEnabled = false;
         emit(ThemeState.lightTheme);
       } else {
-         isDarkThemeEnabled = true;
+        isDarkThemeEnabled = true;
         emit(ThemeState.darkTheme);
       }
     });

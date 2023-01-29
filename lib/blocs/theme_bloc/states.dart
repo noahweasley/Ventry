@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ThemeState extends Equatable {
-  static final baseTheme = ThemeData(
+  static final _baseTheme = ThemeData(
     appBarTheme: const AppBarTheme(
       toolbarHeight: 52.0,
     ),
@@ -19,31 +19,31 @@ class ThemeState extends Equatable {
       ),
     ),
   );
-  static final latoTextTheme = GoogleFonts.latoTextTheme(baseTheme.textTheme);
-  static const defaultTextStyleLight = TextStyle(color: Colors.black);
-  static const defaultTextStyleDark = TextStyle(color: Colors.white);
+  static final _latoTextTheme = GoogleFonts.latoTextTheme(_baseTheme.textTheme);
+  static const _defaultTextStyleLight = TextStyle(color: Colors.black);
+  static const _defaultTextStyleDark = TextStyle(color: Colors.white);
 
   const ThemeState();
 
   @override
   List<ThemeData?> get props => [darkTheme, lightTheme];
-  static final lightTheme = baseTheme.copyWith(
-    textTheme: latoTextTheme.copyWith(
-      bodySmall: defaultTextStyleLight,
-      bodyMedium: defaultTextStyleLight,
-      bodyLarge: defaultTextStyleLight,
-      labelSmall: defaultTextStyleLight,
-      labelMedium: defaultTextStyleLight,
-      labelLarge: defaultTextStyleLight,
-      titleSmall: defaultTextStyleLight,
-      titleMedium: defaultTextStyleLight,
-      titleLarge: defaultTextStyleLight,
-      headlineSmall: defaultTextStyleLight,
-      headlineMedium: defaultTextStyleLight,
-      headlineLarge: defaultTextStyleLight,
-      displaySmall: defaultTextStyleLight,
-      displayMedium: defaultTextStyleLight,
-      displayLarge: defaultTextStyleLight,
+  static final lightTheme = _baseTheme.copyWith(
+    textTheme: _latoTextTheme.copyWith(
+      bodySmall: _defaultTextStyleLight,
+      bodyMedium: _defaultTextStyleLight,
+      bodyLarge: _defaultTextStyleLight,
+      labelSmall: _defaultTextStyleLight,
+      labelMedium: _defaultTextStyleLight,
+      labelLarge: _defaultTextStyleLight,
+      titleSmall: _defaultTextStyleLight,
+      titleMedium: _defaultTextStyleLight,
+      titleLarge: _defaultTextStyleLight,
+      headlineSmall: _defaultTextStyleLight,
+      headlineMedium: _defaultTextStyleLight,
+      headlineLarge: _defaultTextStyleLight,
+      displaySmall: _defaultTextStyleLight,
+      displayMedium: _defaultTextStyleLight,
+      displayLarge: _defaultTextStyleLight,
     ),
     primaryColor: Colors.pinkAccent,
     scaffoldBackgroundColor: Colors.white,
@@ -57,23 +57,26 @@ class ThemeState extends Equatable {
     ),
   );
 
-  static final darkTheme = ThemeData.dark().copyWith(
-    textTheme: latoTextTheme.copyWith(
-      bodySmall: defaultTextStyleDark,
-      bodyMedium: defaultTextStyleDark,
-      bodyLarge: defaultTextStyleDark,
-      labelSmall: defaultTextStyleDark,
-      labelMedium: defaultTextStyleDark,
-      labelLarge: defaultTextStyleDark,
-      titleSmall: defaultTextStyleDark,
-      titleMedium: defaultTextStyleDark,
-      titleLarge: defaultTextStyleDark,
-      headlineSmall: defaultTextStyleDark,
-      headlineMedium: defaultTextStyleDark,
-      headlineLarge: defaultTextStyleDark,
-      displaySmall: defaultTextStyleDark,
-      displayMedium: defaultTextStyleDark,
-      displayLarge: defaultTextStyleDark,
+  static final darkTheme = ThemeData.dark().copyWith();
+  
+  // ignore: unused_field
+  static final _darkTheme = darkTheme.copyWith(
+    textTheme: _latoTextTheme.copyWith(
+      bodySmall: _defaultTextStyleDark,
+      bodyMedium: _defaultTextStyleDark,
+      bodyLarge: _defaultTextStyleDark,
+      labelSmall: _defaultTextStyleDark,
+      labelMedium: _defaultTextStyleDark,
+      labelLarge: _defaultTextStyleDark,
+      titleSmall: _defaultTextStyleDark,
+      titleMedium: _defaultTextStyleDark,
+      titleLarge: _defaultTextStyleDark,
+      headlineSmall: _defaultTextStyleDark,
+      headlineMedium: _defaultTextStyleDark,
+      headlineLarge: _defaultTextStyleDark,
+      displaySmall: _defaultTextStyleDark,
+      displayMedium: _defaultTextStyleDark,
+      displayLarge: _defaultTextStyleDark,
     ),
     scaffoldBackgroundColor: const Color(0xFF1A1A1A),
     textButtonTheme: TextButtonThemeData(

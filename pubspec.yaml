@@ -53,6 +53,7 @@ dependencies:
   firebase_storage: ^11.0.10
   cloud_functions: ^4.0.7
   firebase_messaging: ^14.2.1
+  cupertino_icons: ^1.0.5
 
 dev_dependencies:
   flutter_test:

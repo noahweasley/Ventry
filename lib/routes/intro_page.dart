@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ventry/blocs/intro_screen_bloc/bloc.dart';
 import 'package:ventry/blocs/theme_bloc/theme_bloc.dart';
@@ -31,17 +30,7 @@ class _IntroPageState extends State<IntroPage> {
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             appBar: AppBar(
-              systemOverlayStyle: SystemUiOverlayStyle(
-                statusBarColor: themeBloc.isDarkThemeEnabled ?? false ? const Color(0xFFec5387) : null,
-              ),
-              title: Center(
-                child: Text(
-                  widget.title,
-                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                        color: Colors.white,
-                      ),
-                ),
-              ),
+              title: Center(child: Text(widget.title)),
             ),
             body: BlocProvider(
               create: ((context) => IntroScreenBloc()),
