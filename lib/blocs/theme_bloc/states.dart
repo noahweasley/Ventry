@@ -57,8 +57,8 @@ class ThemeState extends Equatable {
     ),
   );
 
-  static final darkTheme = ThemeData.dark().copyWith();
-  
+  static final darkTheme = ThemeData.dark().copyWith(textTheme: _latoTextTheme);
+
   // ignore: unused_field
   static final _darkTheme = darkTheme.copyWith(
     textTheme: _latoTextTheme.copyWith(
