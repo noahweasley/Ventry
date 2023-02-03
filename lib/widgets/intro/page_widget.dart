@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class PageWidget extends StatelessWidget {
-  final String text;
+class IntroPageViewWidget extends StatelessWidget {
+  final String headerTitleText;
 
-  const PageWidget({super.key, required this.text});
+  const IntroPageViewWidget({super.key, required this.headerTitleText});
 
   @override
   Widget build(BuildContext context) {
@@ -12,14 +12,14 @@ class PageWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           const FlutterLogo(
-            size: 300.0,
+            size: 200.0,
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Row(
               children: [
                 Text(
-                  text,
+                  headerTitleText,
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
               ],

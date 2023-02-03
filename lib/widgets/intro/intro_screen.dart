@@ -17,7 +17,6 @@ class IntroScreen extends StatefulWidget {
 class IntroScreenState extends State<IntroScreen> {
   // widget.themeBloc.isDarkThemeEnabled ?? false
   late final PageController _pageController;
-  final pageChildren = IntroScreenPageUtils.getIntroPageChildren();
 
   @override
   void initState() {
@@ -34,6 +33,7 @@ class IntroScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
     final bloc = context.read<IntroScreenBloc>();
+    final pageChildren = context.getIntroPageChildren();
 
     return LayoutBuilder(
       builder: ((context, boxConstraints) {

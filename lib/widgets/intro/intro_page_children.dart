@@ -1,22 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:ventry/widgets/intro/page_widget.dart';
 
-class IntroScreenPageUtils {
-  static List<Widget> getIntroPageChildren() {
-    const List<Widget> introPageWidgetList = <Widget>[
+extension IntroPageViewExtension on BuildContext {
+  /// get list children
+  List<Widget> getIntroPageChildren() {
+    return const <Widget>[
       Center(
-        child: PageWidget(text: 'Page 1'),
+        child: IntroPageViewWidget(
+          headerTitleText: 'Page 1',
+        ),
       ),
       Center(
-        child: PageWidget(text: 'Page 2'),
+        child: IntroPageViewWidget(
+          headerTitleText: 'Page 2',
+        ),
       ),
       Center(
-        child: PageWidget(text: 'Page 3'),
+        child: IntroPageViewWidget(
+          headerTitleText: 'Page 3',
+        ),
       ),
       Center(
-        child: PageWidget(text: 'Page 4'),
+        child: IntroPageViewWidget(
+          headerTitleText: 'Page 4',
+        ),
       )
     ];
-    return introPageWidgetList;
   }
 }

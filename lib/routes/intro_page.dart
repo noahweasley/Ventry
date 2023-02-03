@@ -22,7 +22,7 @@ class _IntroPageState extends State<IntroPage> {
 
   @override
   Widget build(BuildContext context) {
-    ThemeBloc themeBloc = context.read<ThemeBloc>();
+    var themeBloc = context.read<ThemeBloc>();
 
     return BlocBuilder<ThemeBloc, ThemeData>(
       builder: ((context, state) {
