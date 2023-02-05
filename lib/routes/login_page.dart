@@ -4,7 +4,7 @@ import 'package:ventry/blocs/login_bloc/bloc.dart';
 import 'package:ventry/screens/login_screen.dart';
 
 class LoginPage extends StatefulWidget {
-  static const String routeName = '/login';
+  static const String routeName = 'login';
 
   const LoginPage({super.key});
 

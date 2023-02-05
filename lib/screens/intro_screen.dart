@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ventry/blocs/intro_screen_bloc/intro_screen_bloc.dart';
 import 'package:ventry/blocs/theme_bloc/theme_bloc.dart';
 import 'package:ventry/localization/strings.dart';
-import 'package:ventry/widgets/intro/intro_page_children.dart';
+import 'package:ventry/widgets/intro_page_children.dart';
 
 class IntroScreen extends StatefulWidget {
   final ThemeBloc themeBloc;
@@ -44,7 +44,10 @@ class IntroScreenState extends State<IntroScreen> {
               children: [
                 TextButton(
                   onPressed: () {},
-                  child: const Text('Skip'),
+                  child: const Text(
+                    'Skip',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ],
             ),
@@ -64,11 +67,11 @@ class IntroScreenState extends State<IntroScreen> {
                   padding: const EdgeInsets.all(16.0),
                   child: BlocBuilder<IntroScreenBloc, int>(
                     builder: ((context, state) {
-                      //  _pageController.animateToPage(
-                      //    state,
-                      //    duration: const Duration(seconds: 1),
-                      //    curve: standardEasing,
-                      //  );
+                       _pageController.animateToPage(
+                         state,
+                         duration: const Duration(seconds: 1),
+                         curve: standardEasing,
+                       );
                       return ElevatedButton(
                         onPressed: () {
                           bloc.add(ButtonSwitchPageEvent(numOfPages: pageChildren.length));

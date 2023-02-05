@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ventry/blocs/intro_screen_bloc/bloc.dart';
 import 'package:ventry/blocs/theme_bloc/theme_bloc.dart';
-import 'package:ventry/widgets/intro/intro_screen.dart';
+import 'package:ventry/screens/intro_screen.dart';
 
 class IntroPage extends StatefulWidget {
   static const String routeName = '/intro';

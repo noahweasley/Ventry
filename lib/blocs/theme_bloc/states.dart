@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// Todo fix theme state change
 class ThemeState extends Equatable {
   static final _baseTheme = ThemeData(
     appBarTheme: const AppBarTheme(
@@ -19,16 +20,15 @@ class ThemeState extends Equatable {
       ),
     ),
   );
-  static final _latoTextTheme = GoogleFonts.latoTextTheme(_baseTheme.textTheme);
+
+  static final _montserratTextTheme = GoogleFonts.montserratTextTheme(_baseTheme.textTheme);
   static const _defaultTextStyleLight = TextStyle(color: Colors.black);
   static const _defaultTextStyleDark = TextStyle(color: Colors.white);
 
   const ThemeState();
 
-  @override
-  List<ThemeData?> get props => [darkTheme, lightTheme];
   static final lightTheme = _baseTheme.copyWith(
-    textTheme: _latoTextTheme.copyWith(
+    textTheme: _montserratTextTheme.copyWith(
       bodySmall: _defaultTextStyleLight,
       bodyMedium: _defaultTextStyleLight,
       bodyLarge: _defaultTextStyleLight,
@@ -57,11 +57,9 @@ class ThemeState extends Equatable {
     ),
   );
 
-  static final darkTheme = ThemeData.dark().copyWith(textTheme: _latoTextTheme);
-
   // ignore: unused_field
-  static final _darkTheme = darkTheme.copyWith(
-    textTheme: _latoTextTheme.copyWith(
+  static final darkTheme = _baseTheme.copyWith(
+    textTheme: _montserratTextTheme.copyWith(
       bodySmall: _defaultTextStyleDark,
       bodyMedium: _defaultTextStyleDark,
       bodyLarge: _defaultTextStyleDark,
@@ -85,4 +83,7 @@ class ThemeState extends Equatable {
       ),
     ),
   );
+
+  @override
+  List<ThemeData?> get props => [darkTheme, lightTheme];
 }

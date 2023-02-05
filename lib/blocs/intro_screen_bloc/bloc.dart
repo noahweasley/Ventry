@@ -7,8 +7,9 @@ class IntroScreenBloc extends Bloc<SwitchPageEvent, int> {
   IntroScreenBloc() : super(0) {
     on<SwitchPageEvent>((event, emit) {
       if (event is ButtonSwitchPageEvent) {
-        int currentSelectedPage = (currentPage++ > event.numOfPages) ? 0 : currentPage;
+        int currentSelectedPage = (++currentPage > event.numOfPages) ? 0 : currentPage;
         emit(currentPage = currentSelectedPage);
+        print('Emitted: $currentPage');
       } else if (event is SwipeSwitchPageEvent) {
         currentPage = event.currentIndex;
         emit(currentPage);

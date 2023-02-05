@@ -5,7 +5,7 @@ import 'package:ventry/blocs/theme_bloc/theme_bloc.dart';
 class ThemeBloc extends HydratedBloc<ThemeEvent, ThemeData> {
   bool? isDarkThemeEnabled;
 
-  ThemeBloc() : super(ThemeState.darkTheme) {
+  ThemeBloc() : super(ThemeState.lightTheme) {
     on<ThemeEvent>((event, emit) {
       if (event is LightThemeEvent) {
         isDarkThemeEnabled = false;
