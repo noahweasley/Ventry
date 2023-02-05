@@ -24,7 +24,10 @@ class IntroPageViewWidget extends StatelessWidget {
                 children: [
                   Text(
                     page.headerTitleText,
-                    style: const TextStyle(fontSize: 20.0, height: 1.5),
+                    style: const TextStyle(
+                      fontSize: 20.0,
+                      height: 1.5,
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 24.0),
